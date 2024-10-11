@@ -1,0 +1,42 @@
+app:
+  env: 'local'
+  name: sail-chat
+  port: 3000 # 启动应用程序端口号
+  url: 'http://localhost' # 访问地址
+  version: 0.01
+
+mysql:
+  host: '127.0.0.1'
+  port: 3306
+  user: 'Jiang'
+  password: '123456789'
+  database: 'sail_chat' # 数据库名称
+  driver: mysql # 驱动
+  charset: utf8mb4 # 编码格式
+  max_idle_conns: 10 # 最大空闲连接数
+  max_open_conns: 100 # 最大连接数
+  max_life_time: 14400 # 最大连接时间
+  log_mode: info # 日志级别
+  enable_file_log_writer: true # 是否启用日志
+  log_filename: sql.log # 日志名称
+
+log:
+  level: 'info'
+  dir: ./storage
+  file_name: sail-chat.log
+  format:
+  show_line: true
+  max_size: 5
+  max_backups: 5
+  max_age: 30
+  compress: true
+
+  # redis:
+  #   host: "127.0.0.1"
+  #   port: 6379
+  #   password: "123456"
+  #   db: 0
+
+jwt:
+  secret: 'sail-chat'
+  expire: 86400
